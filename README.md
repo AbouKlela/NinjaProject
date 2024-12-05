@@ -23,7 +23,7 @@ The project incorporates **cutting-edge technologies** and **innovative solution
 - **MVVM (Model-View-ViewModel)** - For structuring the project to improve maintainability and scalability.
 - **Entity Framework** - For data management and interactions with external databases.
 - **WPF (Windows Presentation Foundation)** - Used for creating custom user interfaces in Revit add-ins.
-- - **FireBase** - Used for Handeling Logins.
+- **FireBase** - Used for Handeling Logins.
 
 ---
 
