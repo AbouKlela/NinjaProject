@@ -75,8 +75,9 @@ For larger contributions, please open an issue or discuss your ideas with us bef
 
 For any issues or questions, feel free to reach out via GitHub issues or contact the project collaborators:
 
-- **Mohamed AbouKlela**: [@AbouKlela](https://github.com/AbouKlela)
 - **Omar El Shaf3y**: [@oelshaf3y](https://github.com/oelshaf3y)
+- **Mohamed AbouKlela**: [@AbouKlela](https://github.com/AbouKlela)
+
 
 ---
 
