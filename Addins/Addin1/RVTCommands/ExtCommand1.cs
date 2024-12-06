@@ -18,7 +18,7 @@ namespace NinjaProject.Addins.Addin1.RVTCommands
             eventHandler.Request = Events.RequestEnum.Request1;
             var ExternalEvent = Autodesk.Revit.UI.ExternalEvent.Create(eventHandler);
             ExternalEvent.Raise();
-
+            TaskDialog.Show("Revit", "External Event Raised");
             return Result.Succeeded;
         }
     }
