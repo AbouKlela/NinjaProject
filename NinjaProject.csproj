@@ -78,6 +78,8 @@
     <Compile Include="Addins\TextFinder\Events\EventHandeler.cs" />
     <Compile Include="Addins\TextFinder\Events\RequestEnum.cs" />
     <Compile Include="Addins\TextFinder\RVTCommands\ExtCommand.cs" />
+    <Compile Include="Addins\TextFinder\Static\StaticProp.cs" />
+    <Compile Include="Addins\TextFinder\ViewModels\ViewModel1.cs" />
     <Compile Include="Addins\TextFinder\Views\TextFinderView.xaml.cs">
       <DependentUpon>TextFinderView.xaml</DependentUpon>
     </Compile>
@@ -95,7 +97,6 @@
     <Folder Include="Addins\Addin1\Models\" />
     <Folder Include="Addins\Addin1\Views\" />
     <Folder Include="Addins\TextFinder\Models\" />
-    <Folder Include="Addins\TextFinder\ViewModels\" />
     <Folder Include="Extentions\" />
     <Folder Include="Resources\" />
   </ItemGroup>

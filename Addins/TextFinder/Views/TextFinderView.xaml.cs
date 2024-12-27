@@ -26,6 +26,7 @@ namespace NinjaProject.Addins.TextFinder.Views
         {
             
             InitializeComponent();
+            DataContext = new NinjaProject.Addins.TextFinder.ViewModels.ViewModel1();
         }
 
        

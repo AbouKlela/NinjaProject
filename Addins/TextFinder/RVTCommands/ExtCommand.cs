@@ -23,6 +23,12 @@ namespace NinjaProject.Addins.TextFinder.RVTCommands
             //Assembly.LoadFrom(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MaterialDesignThemes.Wpf.dll"));
             //Assembly.LoadFrom(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "MaterialDesignColors.dll"));
 
+            Document document = commandData.Application.ActiveUIDocument.Document;
+            UIDocument uidoc = commandData.Application.ActiveUIDocument;
+            Static.StaticProp.Doc = document;
+            Static.StaticProp.UIDoc = uidoc;
+
+
 
             TextFinderView view = new TextFinderView();
             view.ShowDialog();

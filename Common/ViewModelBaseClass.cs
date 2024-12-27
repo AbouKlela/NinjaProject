@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NinjaProject.Common
 {
-    internal class ViewModelBaseClass : INotifyPropertyChanged
+    public class ViewModelBaseClass : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

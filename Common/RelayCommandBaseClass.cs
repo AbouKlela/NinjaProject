@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace NinjaProject.Common
 {
-    internal class RelayCommandBaseClass : ICommand
+    public class RelayCommandBaseClass : ICommand
     {
         private readonly Action<object> _execute;
         private readonly Func<object, bool> _canExecute;
