@@ -58,6 +58,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xaml" />
@@ -75,13 +76,19 @@
     <Compile Include="Addins\Addin1\RVTCommands\ExtCommand1.cs" />
     <Compile Include="Addins\Addin1\StaticProperties.cs" />
     <Compile Include="Addins\Addin1\ViewModels\ViewModel1.cs" />
+    <Compile Include="Addins\ModelHealth\RVTCommands\DeleteCAD.cs" />
+    <Compile Include="Addins\ModelHealth\RVTCommands\NotOnSheets.cs" />
     <Compile Include="Addins\TextFinder\Events\EventHandeler.cs" />
     <Compile Include="Addins\TextFinder\Events\RequestEnum.cs" />
     <Compile Include="Addins\TextFinder\RVTCommands\ExtCommand.cs" />
     <Compile Include="Addins\TextFinder\Views\TextFinderView.xaml.cs">
       <DependentUpon>TextFinderView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Addins\ViewState\RVTCommands\ResetSheet.cs" />
+    <Compile Include="Addins\ViewState\RVTCommands\ResetState.cs" />
+    <Compile Include="Addins\ViewState\RVTCommands\SaveState.cs" />
     <Compile Include="Common\ExtApp.cs" />
+    <Compile Include="Common\Ninja.cs" />
     <Compile Include="Common\RelayCommandBaseClass.cs" />
     <Compile Include="Common\ViewModelBaseClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
