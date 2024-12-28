@@ -31,7 +31,7 @@ namespace NinjaProject.Addins.TextFinder.RVTCommands
 
 
             TextFinderView view = new TextFinderView();
-            view.ShowDialog();
+            view.Show();
             return Result.Succeeded;    
 
         }

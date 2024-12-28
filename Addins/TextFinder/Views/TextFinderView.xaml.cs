@@ -29,7 +29,7 @@ namespace NinjaProject.Addins.TextFinder.Views
             DataContext = new NinjaProject.Addins.TextFinder.ViewModels.ViewModel1();
         }
 
-       
+      
        
 
         private void TextFinderView_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -42,5 +42,7 @@ namespace NinjaProject.Addins.TextFinder.Views
         {
            Close();
         }
+
+
     }
 }
