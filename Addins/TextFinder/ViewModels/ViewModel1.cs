@@ -13,13 +13,25 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
 {
     public class ViewModel1 : ViewModelBaseClass
     {
-        private Document doc = Static.StaticProp.Doc;
-        private UIDocument uidoc = Static.StaticProp.UIDoc;
-
+        private Document _doc = Static.StaticProp.Doc;
+        private UIDocument _uidoc = Static.StaticProp.UIDoc;
+        private UIView _uiView;
         public ViewModel1()
         {
-                doc.Application.DocumentChanged += Application_documentChanged;
+            _doc.Application.DocumentChanged += Application_documentChanged;
+            _uiView = _uidoc.GetOpenUIViews().FirstOrDefault(x => x.ViewId == _doc.ActiveView.Id);
+        }
 
+        private int selectedIndex = 0;
+
+        public int SelectedIndex
+        {
+            get => selectedIndex;
+            set
+            {
+                SetProperty(ref selectedIndex, value);
+                TaskDialog.Show("Index", selectedIndex.ToString());
+            }
         }
 
 
@@ -27,7 +39,7 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
         public ObservableCollection<string> TextFoundList
         {
             get => textFoundList;
-            set =>SetProperty(ref textFoundList, value);
+            set => SetProperty(ref textFoundList, value);
 
         }
 
@@ -39,7 +51,7 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
             {
                 SetProperty(ref searchText, value);
                 FindTextFunc();
-               
+
             }
         }
 
@@ -54,9 +66,11 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
             if (string.IsNullOrWhiteSpace(SearchText))
                 return;
 
-            FilteredElementCollector collector = new FilteredElementCollector(doc);
+            FilteredElementCollector collector = new FilteredElementCollector(_doc);
             List<Element> elements = collector.OfCategory(BuiltInCategory.OST_TextNotes).ToElements().ToList();
             List<string> foundTexts = new List<string>();
+            List<TextNote> foundTextsNotes = new List<TextNote>();
+
 
             foreach (Element element in elements)
             {
@@ -65,6 +79,7 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
                 if (textNote.Text.Contains(searchText) || textNote.Text.Contains(searchText.ToLower()) || textNote.Text.Contains(searchText.ToUpper()))
                 {
                     foundTexts.Add(textNote.Text);
+                    foundTextsNotes.Add(textNote);
                 }
             }
 

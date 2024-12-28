@@ -55,7 +55,7 @@
                 <Grid Grid.Row="2">
                     <ListView x:Name="ListView" ItemsSource="{Binding TextFoundList}" 
                               ScrollViewer.HorizontalScrollBarVisibility="Auto" 
-                              ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                              ScrollViewer.VerticalScrollBarVisibility="Auto" SelectedIndex="{Binding SelectedIndex}"/>
                 </Grid>
 
 
