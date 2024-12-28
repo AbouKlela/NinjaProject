@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Revit.UI;
+using NinjaProject.Addins.TextFinder.Static;
 
 namespace NinjaProject.Common
 {
@@ -11,7 +12,12 @@ namespace NinjaProject.Common
     {
         public Result OnStartup(UIControlledApplication application)
         {
+
+            
+
+
             return Result.Succeeded;
+
         }
 
         public Result OnShutdown(UIControlledApplication application)

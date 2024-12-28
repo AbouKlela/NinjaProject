@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel; // Added for ObservableCollection
 using System.Linq;
 using Autodesk.Revit.DB;
+using Autodesk.Revit.DB.Events;
 using Autodesk.Revit.UI;
+using NinjaProject.Addins.TextFinder.Static;
 using NinjaProject.Common;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace NinjaProject.Addins.TextFinder.ViewModels
 {
@@ -13,7 +16,14 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
         private Document doc = Static.StaticProp.Doc;
         private UIDocument uidoc = Static.StaticProp.UIDoc;
 
-        private ObservableCollection<string> textFoundList = new ObservableCollection<string>() {"1","2"};
+        public ViewModel1()
+        {
+                doc.Application.DocumentChanged += Application_documentChanged;
+
+        }
+
+
+        private ObservableCollection<string> textFoundList;
         public ObservableCollection<string> TextFoundList
         {
             get => textFoundList;
@@ -28,14 +38,18 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
             set
             {
                 SetProperty(ref searchText, value);
-                findText?.Execute(null);
+                FindTextFunc();
+               
             }
         }
 
-        private RelayCommandBaseClass findText;
-        public RelayCommandBaseClass FindText => findText ?? (findText = new RelayCommandBaseClass(FindTextFunc));
+        private void Application_documentChanged(object sender, DocumentChangedEventArgs e)
+        {
+            FindTextFunc();
+        }
 
-        private void FindTextFunc(object obj)
+
+        private void FindTextFunc()
         {
             if (string.IsNullOrWhiteSpace(SearchText))
                 return;
@@ -48,7 +62,7 @@ namespace NinjaProject.Addins.TextFinder.ViewModels
             {
                 TextNote textNote = element as TextNote;
                 if (textNote == null) continue;
-                if (textNote.Text.Contains(searchText))
+                if (textNote.Text.Contains(searchText) || textNote.Text.Contains(searchText.ToLower()) || textNote.Text.Contains(searchText.ToUpper()))
                 {
                     foundTexts.Add(textNote.Text);
                 }

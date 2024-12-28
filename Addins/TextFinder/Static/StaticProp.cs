@@ -12,5 +12,7 @@ namespace NinjaProject.Addins.TextFinder.Static
     {
         public static Document Doc { get; set; }
         public static UIDocument UIDoc { get; set; }
+
+        public static UIControlledApplication UiControlledApplication { get; set; }
     }
 }

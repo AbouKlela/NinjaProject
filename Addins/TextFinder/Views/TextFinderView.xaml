@@ -50,7 +50,7 @@
                 <StackPanel Grid.Row="1" Orientation="Vertical">
                     <TextBlock Text="Please Enter The Text" Margin="5,0,0,0"/>
                     <TextBox x:Name="txtSearch" Margin="1" Text="{Binding SearchText , UpdateSourceTrigger=PropertyChanged}" />
-                    <Button x:Name="Find" Content="Find" HorizontalAlignment="Right" FontSize="8"  Width="60" Height="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Command="{Binding FindText}"/>
+                    
                 </StackPanel>
                 <Grid Grid.Row="2">
                     <ListView x:Name="ListView" ItemsSource="{Binding TextFoundList}" 
