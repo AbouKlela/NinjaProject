@@ -75,6 +75,14 @@
     <Compile Include="Addins\Addin1\RVTCommands\ExtCommand1.cs" />
     <Compile Include="Addins\Addin1\StaticProperties.cs" />
     <Compile Include="Addins\Addin1\ViewModels\ViewModel1.cs" />
+    <Compile Include="Addins\ProjectCoordinates\Events\EventHandeler.cs" />
+    <Compile Include="Addins\ProjectCoordinates\Models\Model.cs" />
+    <Compile Include="Addins\ProjectCoordinates\RVTCommands\ExternalCommand.cs" />
+    <Compile Include="Addins\ProjectCoordinates\Statics.cs" />
+    <Compile Include="Addins\ProjectCoordinates\ViewModels\ViewModel.cs" />
+    <Compile Include="Addins\ProjectCoordinates\Views\ProjectCoordinate.xaml.cs">
+      <DependentUpon>ProjectCoordinate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Addins\TextFinder\Events\EventHandeler.cs" />
     <Compile Include="Addins\TextFinder\Events\RequestEnum.cs" />
     <Compile Include="Addins\TextFinder\RVTCommands\ExtCommand.cs" />
@@ -110,6 +118,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Addins\ProjectCoordinates\Views\ProjectCoordinate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Addins\TextFinder\Views\TextFinderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
